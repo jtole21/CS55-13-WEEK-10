@@ -29,5 +29,17 @@
   },
   "storage": {
     "rules": "storage.rules"
+  },
+  "auth": {
+    "providers": {
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "Shelfside",
+        "supportEmail": "tolentinojessica1999@gmail.com",
+        "authorizedRedirectUris": [
+          "https://week10-cs5513.firebaseapp.com/__/auth/handler",
+          "http://localhost"
+        ]
+      }
+    }
   }
 }

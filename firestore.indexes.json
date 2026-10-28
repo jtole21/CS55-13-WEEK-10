@@ -4,112 +4,122 @@
       "collectionGroup": "bookstores",
       "queryScope": "COLLECTION",
       "fields": [
-        {
-          "fieldPath": "category",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "avgRating",
-          "order": "DESCENDING"
-        }
+        { "fieldPath": "category", "order": "ASCENDING" },
+        { "fieldPath": "avgRating", "order": "DESCENDING" }
       ]
     },
     {
       "collectionGroup": "bookstores",
       "queryScope": "COLLECTION",
       "fields": [
-        {
-          "fieldPath": "category",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "numRatings",
-          "order": "DESCENDING"
-        }
+        { "fieldPath": "category", "order": "ASCENDING" },
+        { "fieldPath": "numRatings", "order": "DESCENDING" }
       ]
     },
     {
       "collectionGroup": "bookstores",
       "queryScope": "COLLECTION",
       "fields": [
-        {
-          "fieldPath": "category",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "price",
-          "order": "ASCENDING"
-        }
+        { "fieldPath": "city", "order": "ASCENDING" },
+        { "fieldPath": "avgRating", "order": "DESCENDING" }
       ]
     },
     {
       "collectionGroup": "bookstores",
       "queryScope": "COLLECTION",
       "fields": [
-        {
-          "fieldPath": "city",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "avgRating",
-          "order": "DESCENDING"
-        }
+        { "fieldPath": "city", "order": "ASCENDING" },
+        { "fieldPath": "numRatings", "order": "DESCENDING" }
       ]
     },
     {
       "collectionGroup": "bookstores",
       "queryScope": "COLLECTION",
       "fields": [
-        {
-          "fieldPath": "city",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "numRatings",
-          "order": "DESCENDING"
-        }
+        { "fieldPath": "price", "order": "ASCENDING" },
+        { "fieldPath": "avgRating", "order": "DESCENDING" }
       ]
     },
     {
       "collectionGroup": "bookstores",
       "queryScope": "COLLECTION",
       "fields": [
-        {
-          "fieldPath": "city",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "price",
-          "order": "ASCENDING"
-        }
+        { "fieldPath": "price", "order": "ASCENDING" },
+        { "fieldPath": "numRatings", "order": "DESCENDING" }
       ]
     },
     {
       "collectionGroup": "bookstores",
       "queryScope": "COLLECTION",
       "fields": [
-        {
-          "fieldPath": "price",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "avgRating",
-          "order": "DESCENDING"
-        }
+        { "fieldPath": "category", "order": "ASCENDING" },
+        { "fieldPath": "city", "order": "ASCENDING" },
+        { "fieldPath": "avgRating", "order": "DESCENDING" }
       ]
     },
     {
       "collectionGroup": "bookstores",
       "queryScope": "COLLECTION",
       "fields": [
-        {
-          "fieldPath": "price",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "numRatings",
-          "order": "DESCENDING"
-        }
+        { "fieldPath": "category", "order": "ASCENDING" },
+        { "fieldPath": "city", "order": "ASCENDING" },
+        { "fieldPath": "numRatings", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "bookstores",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "category", "order": "ASCENDING" },
+        { "fieldPath": "price", "order": "ASCENDING" },
+        { "fieldPath": "avgRating", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "bookstores",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "category", "order": "ASCENDING" },
+        { "fieldPath": "price", "order": "ASCENDING" },
+        { "fieldPath": "numRatings", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "bookstores",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "city", "order": "ASCENDING" },
+        { "fieldPath": "price", "order": "ASCENDING" },
+        { "fieldPath": "avgRating", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "bookstores",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "city", "order": "ASCENDING" },
+        { "fieldPath": "price", "order": "ASCENDING" },
+        { "fieldPath": "numRatings", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "bookstores",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "category", "order": "ASCENDING" },
+        { "fieldPath": "city", "order": "ASCENDING" },
+        { "fieldPath": "price", "order": "ASCENDING" },
+        { "fieldPath": "avgRating", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "bookstores",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "category", "order": "ASCENDING" },
+        { "fieldPath": "city", "order": "ASCENDING" },
+        { "fieldPath": "price", "order": "ASCENDING" },
+        { "fieldPath": "numRatings", "order": "DESCENDING" }
       ]
     }
   ],
