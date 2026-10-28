@@ -1,0 +1,11 @@
+lib/firebase/config.js
+.next/
+.firebase/
+node_modules/
+.env
+.env.local
+.env*.local
+.firebaserc
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
