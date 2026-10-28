@@ -34,7 +34,7 @@ export default async function Home(props) {
           <div className="bookstore__review_summary">
             <p>
               Visitors describe {bookstore.name} through the notes below.
-              Gemini writes this sentence once GEMINI_API_KEY is set.
+              The published shop page asks Gemini for one sentence from these notes.
             </p>
             <p>Gemini summary</p>
           </div>

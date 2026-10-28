@@ -1,8 +1,50 @@
-import { gemini20Flash, googleAI } from "@genkit-ai/googleai";
-import { genkit } from "genkit";
 import { getReviewsByBookstoreId } from "@/src/lib/firebase/firestore.js";
 import { getAuthenticatedAppForUser } from "@/src/lib/firebase/serverApp";
 import { getFirestore } from "firebase/firestore";
+
+const MODEL = "gemini-3.8-flash";
+
+// App Hosting runs as the project service account, which can call Vertex AI.
+async function summarizeWithVertex(prompt) {
+  const projectId = process.env.GOOGLE_CLOUD_PROJECT || "week10-cs5513";
+  const tokenResponse = await fetch(
+    "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token",
+    {
+      headers: { "Metadata-Flavor": "Google" },
+      cache: "no-store",
+    },
+  );
+  if (!tokenResponse.ok) {
+    throw new Error("App Hosting did not provide a service account token.");
+  }
+  const { access_token: accessToken } = await tokenResponse.json();
+  const response = await fetch(
+    `https://aiplatform.googleapis.com/v1/projects/${projectId}/locations/global/publishers/google/models/${MODEL}:generateContent`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
+      },
+      cache: "no-store",
+      body: JSON.stringify({
+        contents: [{ role: "user", parts: [{ text: prompt }] }],
+      }),
+    },
+  );
+  if (!response.ok) {
+    throw new Error(`Vertex Gemini returned ${response.status}.`);
+  }
+  const data = await response.json();
+  const text = (data.candidates?.[0]?.content?.parts || [])
+    .map((part) => part.text || "")
+    .join("")
+    .trim();
+  if (!text) {
+    throw new Error("Vertex Gemini returned an empty summary.");
+  }
+  return text;
+}
 
 // Read the visitor notes for one shop and ask Gemini for a single-sentence summary.
 export async function GeminiSummary({ bookstoreId }) {
@@ -31,11 +73,7 @@ export async function GeminiSummary({ bookstoreId }) {
   `;
 
   try {
-    const ai = genkit({
-      plugins: [googleAI()],
-      model: gemini20Flash,
-    });
-    const { text } = await ai.generate(prompt);
+    const text = await summarizeWithVertex(prompt);
 
     return (
       <div className="bookstore__review_summary">
@@ -47,10 +85,7 @@ export async function GeminiSummary({ bookstoreId }) {
     console.error("Gemini could not summarize the visitor notes.", error);
     return (
       <div className="bookstore__review_summary">
-        <p>
-          A summary could not be generated. Set GEMINI_API_KEY in the
-          environment, then reload this shop.
-        </p>
+        <p>A summary could not be generated. Reload this shop in a moment.</p>
       </div>
     );
   }
